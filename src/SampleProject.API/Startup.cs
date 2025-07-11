@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication;
+
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.UserSecrets;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
+
 using SampleProject.API.Configuration;
 using SampleProject.Application.Configuration.Validation;
 using SampleProject.API.SeedWork;
@@ -64,24 +64,11 @@ namespace SampleProject.API
             var authSettings = _configuration.GetSection("Auth").Get<AuthSettings>();
             services.AddSingleton(authSettings);
 
-            services.AddAuthentication(x =>
+            services.AddAuthentication(options =>
             {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(x =>
-            {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authSettings.SecretKey)),
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidIssuer = authSettings.Issuer,
-                    ValidAudience = authSettings.Audience
-                };
-            });
+                options.DefaultAuthenticateScheme = ApiKeyAuthenticationHandler.SchemeName;
+                options.DefaultChallengeScheme = ApiKeyAuthenticationHandler.SchemeName;
+            }).AddScheme<AuthenticationSchemeOptions, ApiKeyAuthenticationHandler>(ApiKeyAuthenticationHandler.SchemeName, null);
 
             services.AddAuthorization();
             
