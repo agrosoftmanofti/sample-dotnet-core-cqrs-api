@@ -71,11 +71,10 @@ Outbox Pattern implementation using [Quartz.NET](https://github.com/quartznet/qu
 
 ## Authentication
 
-The API uses JWT bearer authentication. Obtain a token by sending the credentials defined under the `Auth` section of `appsettings.json` to `POST /api/auth/token`.
-Include the returned token in the `Authorization` header when calling other endpoints:
+Endpoints secured with `[Authorize]` now expect an API key. Include the value defined under the `Auth:ApiKey` setting in the `X-Api-Key` header:
 
 ```
-Authorization: Bearer {token}
+X-Api-Key: {your-key}
 ```
 
 The OpenAPI specification is served at `/swagger/v1/swagger.json`. You can upload this file to [Scalar Swagger Editor](https://docs.scalar.com/swagger-editor) for interactive documentation.
