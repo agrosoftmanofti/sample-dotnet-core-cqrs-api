@@ -14,7 +14,7 @@ namespace SampleProject.Infrastructure.Processing
             {
                 var mediator = scope.Resolve<IMediator>();
 
-                return await mediator.Send(query);
+                return await mediator.SendAsync(query);
             }
         }
     }
