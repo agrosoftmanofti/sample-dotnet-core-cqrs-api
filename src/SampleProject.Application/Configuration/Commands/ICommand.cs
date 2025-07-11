@@ -1,5 +1,5 @@
 ﻿using System;
-using MediatR;
+using Cortex.Mediator;
 
 namespace SampleProject.Application.Configuration.Commands
 {

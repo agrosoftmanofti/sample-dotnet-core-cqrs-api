@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
-using MediatR;
+using Cortex.Mediator;
 using Microsoft.AspNetCore.Mvc;
 using SampleProject.Application.Customers;
 using SampleProject.Application.Customers.RegisterCustomer;

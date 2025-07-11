@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using Autofac;
-using MediatR;
+using Cortex.Mediator;
 using SampleProject.Application;
 using SampleProject.Application.Configuration.Commands;
 using SampleProject.Application.Configuration.DomainEvents;
