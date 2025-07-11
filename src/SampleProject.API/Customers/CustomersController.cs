@@ -1,15 +1,17 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
 using Cortex.Mediator;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SampleProject.Application.Customers;
 using SampleProject.Application.Customers.RegisterCustomer;
 
 namespace SampleProject.API.Customers
 {
-    [Route("api/customers")]
-    [ApiController]
-    public class CustomersController : Controller
+[Route("api/customers")]
+[ApiController]
+[Authorize]
+public class CustomersController : Controller
     {
         private readonly IMediator _mediator;
 

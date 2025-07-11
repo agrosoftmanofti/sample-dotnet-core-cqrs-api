@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using Cortex.Mediator;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SampleProject.Application.Orders.ChangeCustomerOrder;
 using SampleProject.Application.Orders.GetCustomerOrderDetails;
@@ -12,9 +13,10 @@ using SampleProject.Application.Orders.RemoveCustomerOrder;
 
 namespace SampleProject.API.Orders
 {
-    [Route("api/customers")]
-    [ApiController]
-    public class CustomerOrdersController : Controller
+[Route("api/customers")]
+[ApiController]
+[Authorize]
+public class CustomerOrdersController : Controller
     {
         private readonly IMediator _mediator;
 
