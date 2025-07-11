@@ -68,3 +68,14 @@ Outbox Pattern implementation using [Quartz.NET](https://github.com/quartznet/qu
 2. Execute InitializeDatabase.sql script.
 3. Set connection string using environment variable named `ASPNETCORE_SampleProject_IntegrationTests_ConnectionString`
 - Run tests from project [src/Tests/SampleProject.IntegrationTests](src/Tests/SampleProject.IntegrationTests)
+
+## Authentication
+
+The API uses JWT bearer authentication. Obtain a token by sending the credentials defined under the `Auth` section of `appsettings.json` to `POST /api/auth/token`.
+Include the returned token in the `Authorization` header when calling other endpoints:
+
+```
+Authorization: Bearer {token}
+```
+
+The OpenAPI specification is served at `/swagger/v1/swagger.json`. You can upload this file to [Scalar Swagger Editor](https://docs.scalar.com/swagger-editor) for interactive documentation.
