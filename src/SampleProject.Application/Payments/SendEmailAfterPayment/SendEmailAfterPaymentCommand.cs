@@ -1,5 +1,5 @@
 ﻿using System;
-using MediatR;
+using Cortex.Mediator;
 using Newtonsoft.Json;
 using SampleProject.Application.Configuration.Commands;
 using SampleProject.Domain.Payments;

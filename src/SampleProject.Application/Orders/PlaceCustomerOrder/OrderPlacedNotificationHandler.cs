@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Dapper;
-using MediatR;
+using Cortex.Mediator;
 using SampleProject.Application.Configuration.Data;
 using SampleProject.Application.Configuration.Emails;
 using SampleProject.Domain.Customers.Orders;

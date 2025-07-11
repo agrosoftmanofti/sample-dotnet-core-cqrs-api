@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿using Cortex.Mediator;
 using SampleProject.Application.Configuration.Commands;
 
 namespace SampleProject.Application.Customers.RegisterCustomer

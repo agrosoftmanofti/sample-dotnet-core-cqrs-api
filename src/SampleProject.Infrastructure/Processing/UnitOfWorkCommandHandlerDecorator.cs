@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
+using Cortex.Mediator;
 using Microsoft.EntityFrameworkCore;
 using SampleProject.Application;
 using SampleProject.Application.Configuration.Commands;

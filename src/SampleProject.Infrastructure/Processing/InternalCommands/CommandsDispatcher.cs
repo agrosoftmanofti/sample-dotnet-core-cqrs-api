@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Threading.Tasks;
-using MediatR;
+using Cortex.Mediator;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using SampleProject.Application.Configuration.Processing;

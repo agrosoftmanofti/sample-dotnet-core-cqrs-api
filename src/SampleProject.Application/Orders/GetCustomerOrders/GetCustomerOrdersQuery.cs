@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using MediatR;
+using Cortex.Mediator;
 using SampleProject.Application.Configuration.Queries;
 
 namespace SampleProject.Application.Orders.GetCustomerOrders

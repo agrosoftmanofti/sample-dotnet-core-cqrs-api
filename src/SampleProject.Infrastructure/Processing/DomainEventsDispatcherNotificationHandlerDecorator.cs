@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
+using Cortex.Mediator;
 using SampleProject.Application.Configuration.DomainEvents;
 
 namespace SampleProject.Infrastructure.Processing

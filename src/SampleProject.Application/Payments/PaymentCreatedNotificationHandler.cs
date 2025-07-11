@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
+using Cortex.Mediator;
 using SampleProject.Application.Configuration.Processing;
 using SampleProject.Application.Payments.SendEmailAfterPayment;
 

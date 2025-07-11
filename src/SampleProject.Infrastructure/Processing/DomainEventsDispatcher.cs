@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Core;
-using MediatR;
+using Cortex.Mediator;
 using Newtonsoft.Json;
 using SampleProject.Application.Configuration.DomainEvents;
 using SampleProject.Domain.SeedWork;

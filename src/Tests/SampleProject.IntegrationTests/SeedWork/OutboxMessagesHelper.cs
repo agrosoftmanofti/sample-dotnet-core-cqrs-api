@@ -4,7 +4,7 @@ using System.Data;
 using System.Reflection;
 using System.Threading.Tasks;
 using Dapper;
-using MediatR;
+using Cortex.Mediator;
 using Newtonsoft.Json;
 using SampleProject.Application.Payments;
 using SampleProject.Infrastructure.Processing.Outbox;

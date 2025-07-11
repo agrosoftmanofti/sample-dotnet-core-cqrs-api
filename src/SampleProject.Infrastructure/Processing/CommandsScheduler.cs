@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Dapper;
-using MediatR;
+using Cortex.Mediator;
 using Newtonsoft.Json;
 using SampleProject.Application;
 using SampleProject.Application.Configuration.Commands;

@@ -22,7 +22,7 @@ Read Model - executing raw SQL scripts on database views objects (using [Dapper]
 
 Write Model - Domain Driven Design approach (using Entity Framework Core).
 
-Commands/Queries/Domain Events handling using [MediatR](https://github.com/jbogard/MediatR) library.
+Commands/Queries/Domain Events handling using [Cortex.Mediator](https://example.com/cortex.mediator) library.
 
 ## Domain
 

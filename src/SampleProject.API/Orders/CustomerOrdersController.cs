@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using MediatR;
+using Cortex.Mediator;
 using Microsoft.AspNetCore.Mvc;
 using SampleProject.Application.Orders.ChangeCustomerOrder;
 using SampleProject.Application.Orders.GetCustomerOrderDetails;

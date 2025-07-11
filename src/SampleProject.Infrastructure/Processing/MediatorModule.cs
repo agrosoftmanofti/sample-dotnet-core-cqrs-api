@@ -6,8 +6,8 @@ using Autofac;
 using Autofac.Core;
 using Autofac.Features.Variance;
 using FluentValidation;
-using MediatR;
-using MediatR.Pipeline;
+using Cortex.Mediator;
+using Cortex.Mediator.Pipeline;
 using SampleProject.Application.Configuration.Validation;
 using SampleProject.Application.Orders.GetCustomerOrders;
 

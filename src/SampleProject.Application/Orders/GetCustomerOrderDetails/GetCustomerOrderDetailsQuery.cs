@@ -1,5 +1,5 @@
 ﻿using System;
-using MediatR;
+using Cortex.Mediator;
 using SampleProject.Application.Configuration.Queries;
 
 namespace SampleProject.Application.Orders.GetCustomerOrderDetails
