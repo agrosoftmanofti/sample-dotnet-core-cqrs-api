@@ -13,7 +13,7 @@ namespace SampleProject.Infrastructure.Processing
             using (var scope = CompositionRoot.BeginLifetimeScope())
             {
                 var mediator = scope.Resolve<IMediator>();
-                await mediator.Send(command);
+                await mediator.SendAsync(command);
             }
         }
 
@@ -22,7 +22,7 @@ namespace SampleProject.Infrastructure.Processing
             using (var scope = CompositionRoot.BeginLifetimeScope())
             {
                 var mediator = scope.Resolve<IMediator>();
-                return await mediator.Send(command);
+                return await mediator.SendAsync(command);
             }
         }
     }

@@ -28,7 +28,7 @@ public class CustomersController : Controller
         [ProducesResponseType(typeof(CustomerDto), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> RegisterCustomer([FromBody]RegisterCustomerRequest request)
         {
-           var customer = await _mediator.Send(new RegisterCustomerCommand(request.Email, request.Name));
+           var customer = await _mediator.SendAsync(new RegisterCustomerCommand(request.Email, request.Name));
 
            return Created(string.Empty, customer);
         }       

@@ -52,7 +52,7 @@ namespace SampleProject.Infrastructure.Processing.Outbox
 
                     using (LogContext.Push(new OutboxMessageContextEnricher(request)))
                     {
-                        await this._mediator.Publish(request, cancellationToken);
+                        await this._mediator.PublishAsync(request, cancellationToken);
 
                         await connection.ExecuteAsync(sqlUpdateProcessedDate, new
                         {

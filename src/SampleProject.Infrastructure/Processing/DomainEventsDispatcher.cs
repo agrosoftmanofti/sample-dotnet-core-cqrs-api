@@ -58,7 +58,7 @@ namespace SampleProject.Infrastructure.Processing
             var tasks = domainEvents
                 .Select(async (domainEvent) =>
                 {
-                    await _mediator.Publish(domainEvent);
+                    await _mediator.PublishAsync(domainEvent);
                 });
 
             await Task.WhenAll(tasks);

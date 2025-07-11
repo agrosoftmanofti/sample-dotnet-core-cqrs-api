@@ -32,7 +32,7 @@ namespace SampleProject.Infrastructure.Processing.InternalCommands
 
             internalCommand.ProcessedDate = DateTime.UtcNow;
 
-            await this._mediator.Send(command);
+            await this._mediator.SendAsync(command);
         }
     }
 }

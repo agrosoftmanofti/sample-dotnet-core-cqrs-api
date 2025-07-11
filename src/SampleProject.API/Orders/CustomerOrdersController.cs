@@ -35,7 +35,7 @@ public class CustomerOrdersController : Controller
         [ProducesResponseType(typeof(List<OrderDto>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetCustomerOrders(Guid customerId)
         {
-            var orders = await _mediator.Send(new GetCustomerOrdersQuery(customerId));
+           var orders = await _mediator.SendAsync(new GetCustomerOrdersQuery(customerId));
 
             return Ok(orders);
         }
@@ -50,7 +50,7 @@ public class CustomerOrdersController : Controller
         public async Task<IActionResult> GetCustomerOrderDetails(
             [FromRoute]Guid orderId)
         {
-            var orderDetails = await _mediator.Send(new GetCustomerOrderDetailsQuery(orderId));
+           var orderDetails = await _mediator.SendAsync(new GetCustomerOrderDetailsQuery(orderId));
 
             return Ok(orderDetails);
         }
@@ -68,7 +68,7 @@ public class CustomerOrdersController : Controller
             [FromRoute]Guid customerId, 
             [FromBody]CustomerOrderRequest request)
         {
-           await _mediator.Send(new PlaceCustomerOrderCommand(customerId, request.Products, request.Currency));
+           await _mediator.SendAsync(new PlaceCustomerOrderCommand(customerId, request.Products, request.Currency));
 
            return Created(string.Empty, null);
         }
@@ -87,7 +87,7 @@ public class CustomerOrdersController : Controller
             [FromRoute]Guid orderId,
             [FromBody]CustomerOrderRequest request)
         {
-            await _mediator.Send(new ChangeCustomerOrderCommand(customerId, orderId, request.Products, request.Currency));
+            await _mediator.SendAsync(new ChangeCustomerOrderCommand(customerId, orderId, request.Products, request.Currency));
 
             return Ok();
         }
@@ -104,7 +104,7 @@ public class CustomerOrdersController : Controller
             [FromRoute]Guid customerId,
             [FromRoute]Guid orderId)
         {
-            await _mediator.Send(new RemoveCustomerOrderCommand(customerId, orderId));
+            await _mediator.SendAsync(new RemoveCustomerOrderCommand(customerId, orderId));
 
             return Ok();
         }
